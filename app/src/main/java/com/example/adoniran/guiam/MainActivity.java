@@ -24,13 +24,13 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        ImageView img = (ImageView) findViewById(R.id.imageView_mapa);
+//        ImageView img = (ImageView) findViewById(R.id.imageView_mapa);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Recurso ainda não disponivel", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Recurso ainda em construção", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -83,18 +83,21 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_search) {
+
+            Intent it =new Intent(this,Localizar.class);
+            startActivity(it);
+        } else if (id == R.id.nav_login) {
             Intent it =new Intent(this,Login.class);
             startActivity(it);
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_cadastro) {
             Intent it =new Intent(this,Cadastro.class);
             startActivity(it);
 
         } else if (id == R.id.nav_manage) {
-
+            Intent it =new Intent(this,Cadastro_atividade.class);
+            startActivity(it);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
